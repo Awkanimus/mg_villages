@@ -3,6 +3,7 @@ local S = mg_villages.intllib
 
 -- get the id of the village pos lies in (or nil if outside of villages)
 mg_villages.get_town_id_at_pos = function( pos )
+	if not mg_villages.all_villages then return nil end
 	for id, v in pairs( mg_villages.all_villages ) do
 		local height_diff = pos.y - v.vh;
 		if( height_diff < 40 and height_diff > -10 ) then

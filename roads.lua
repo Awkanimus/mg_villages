@@ -143,7 +143,7 @@ end
 -- try to reconstruct the tree-like road network structure (the data was
 -- not saved completely from the beginning)
 mg_villages.get_road_list = function( village_id, force_check )
-	if( not( mg_villages.all_villages[ village_id ] )) then
+	if( not(mg_villages.all_villages) or not( mg_villages.all_villages[ village_id ] )) then
 		return {};
 	end
 	local bpos_list = mg_villages.all_villages[ village_id ].to_add_data.bpos;
